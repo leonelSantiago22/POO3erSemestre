@@ -1,3 +1,4 @@
+//Ejemplo de asignacion de memoria 
 #include <iostream>
 
 using namespace std;
