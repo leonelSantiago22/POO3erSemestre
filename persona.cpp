@@ -7,10 +7,23 @@ class Persona
     char *nombre;
     int edad;
     public:
+    Persona()//constructor
+    {
+        nombre = NULL;
+        edad =0;
+    }
     void setNombre(char *);
     char * getNombre();
     void setEdad(int);
     int getEdad();
+    ~Persona(){//Destructor
+        if (edad!=0)
+        {
+            delete [] nombre;
+            edad = 0;
+        }
+        
+    }
 };
 
 void Persona::setNombre(char *n)
@@ -41,8 +54,20 @@ class Alumno: public Persona
     protected:
     int matricula;
     public:
+    Alumno()
+    {
+        matricula=0;
+    }
     void setMatricula(int);
     int getMatricula();
+    ~Alumno()
+    {
+        if (matricula != 0)
+        {
+            matricula = 0;
+        }
+        
+    }
 };
 
 void Alumno::setMatricula(int m)
@@ -61,8 +86,20 @@ class lic: public Alumno{
     protected:
     int semestre;
     public:
+    lic()
+    {
+        semestre=0;
+    }
     void setSemestre(int );
     int getSemestre();
+    ~lic()
+    {
+        if (semestre!=0)
+        {
+            semestre=0;
+        }
+        
+    }
 };
 
 void lic::setSemestre(int s)
@@ -81,8 +118,20 @@ class posgrado: public Alumno{
     protected: 
     int materias;
     public:
+    posgrado()
+    {
+        materias=0;
+    }
     void setMaterias(int);
     int getMaterias();
+    ~posgrado()
+    {
+        if (materias!=0)
+        {
+            materias =0;
+        }
+        
+    }
 };
 
 void posgrado::setMaterias(int ma)
@@ -104,8 +153,20 @@ class profesor: public Persona
     protected:
     int sueldo;
     public:
+    profesor()
+    {
+        sueldo=0;
+    }
     void setSueldo(int);
     int getSueldo();
+    ~profesor()
+    {
+        if (sueldo!=0)
+        {
+            sueldo=0;
+        }
+        
+    }
 };
 
 void profesor::setSueldo(int s)
@@ -125,8 +186,21 @@ class administrativo: public Persona
     protected:
     char *departamento;
     public:
+    administrativo()
+    {
+        departamento = NULL;
+    }
     void setDepartamento(char *);
     char * getDepartamento();
+    ~administrativo()
+    {
+        if (departamento!=NULL)
+        {
+            delete [] departamento;
+            departamento = NULL;
+        }
+        
+    }
 };
 void administrativo::setDepartamento(char *d)
 {
