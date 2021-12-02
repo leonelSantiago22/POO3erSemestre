@@ -7,6 +7,6 @@
  *
  * @author Leonel
  */
-public class Persona {
+public class Main3 {
     
 }
