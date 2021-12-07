@@ -49,7 +49,7 @@ int Persona::getEdad()
     return edad;
 }
 ///
-class Alumno: public Persona
+class Alumno: virtual public Persona
 {
     protected:
     int matricula;
@@ -277,6 +277,6 @@ int main()
     Al.setSueldo(1500);
     Al.setMatricula(12434);
     Al.setPermiso(15);
-    cout<<"Profesor-Alumno: "<<Al.Alumno::getNombre()<<"\tEdad: "<<Al.Alumno::getEdad()<<"\tsueldo:\t"<<Al.getSueldo()<<"MAtricula:\t"<<Al.getMatricula()<<"Permiso: \t"<<Al.getPermiso()<<endl;
+    cout<<"Profesor-Alumno: "<<Al.getNombre()<<"\tEdad: "<<Al.getEdad()<<"\tsueldo:\t"<<Al.getSueldo()<<"MAtricula:\t"<<Al.getMatricula()<<"Permiso: \t"<<Al.getPermiso()<<endl;
     return 0;
 }

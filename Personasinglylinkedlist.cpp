@@ -9,12 +9,12 @@ class Nodo
     Persona *per;
     public:
         Persona * getPersona();
-        Persona * setPersona(Persona *);
-        Nodo * setSig();
+        void  * setPersona(Persona *);
+        void setSig(Persona *;
         Nodo *getSig();
-        Node* create_node(Persona *);
-        Nodo(){
-            sig = NULL;
+        Nodo(Persona *_per, Nodo *_sig){
+            per= _per;
+            sig = _sig;
         }
         ~Nodo(){
             if (sig!=NULL)
@@ -24,95 +24,109 @@ class Nodo
             
         }
 };
+void Nodo::setPersona(Persona *_per)
+{
+    per = _per;
+}
+Persona * Nodo::getPersona()
+{
+    return per;
+}
+void Nodo::setSig(Nodo *_siguiente)
+{
+    sig = _siguiente;
+}
 Nodo * Nodo::getSig()
 {
     return sig;
 }
-Persona * Nodo::setPersona(Persona *item)
-{
-    if (item!=NULL)
-    {
-        per = item;
-        return per;
-    }else{
-        cout<<"No se puede continuar"<<endl;
-    }
-    
-}
-Nodo * Nodo::setSig()
-{
-    sig = NULL;
-    return sig;
-}
-Nodo* Nodo::create_node(Persona *item)
-{
-    Nodo *new_node = (Node *) malloc (sizeof(Node));
-    new_node = new_node->setPersona(item);
-    new_node = new_node.setSig();
-    return new_node;
-}
-class lista{
-    protected:
-    Nodo *head;
+class Lista{
+    private:
+        Nodo *head; 
     public:
-        lista(head)//Contructor de la clase lista 
+        Lista()
         {
-            heead = NULL;
+            head = NULL;
         }
-        lista* create_slinked_list();
-        void insert_head(Nodo **, Persona *);
-        void insert_end(Nodo **, Persona *);
-        ~lista()
-        {
-            if (head!=NULL)
+        void inserHead(Persona *);
+        void insertEnd(Persona *);
+        void mostrar();
+        ~Lista(){
+            if(head!=NULL)
             {
                 head = NULL;
-                delete [] head;
             }
-            
         }
 };
-void lista::insert_head(Nodo **ref, Persona *per)
+void Lista::inserHead(Persona *_per)
 {
-    Nodo *new_node = Nodo::create_node(per);
-    new_node = Nodo::setSig(*ref) = (*ref);
-    (*ref) = new_node;
+    Nodo n(_per, head);
+    head = n;
 }
-void lista::insert_end(Nodo **ref, Persona *per)
+void Lista::insertEnd(Persona *_per)
 {
-    if ((*ref)== NULL)//Valida que no estamos agregando por primera vez  si si lo mandamos a la validacion del insertar al inicio
+    Nodo n(_per, null);
+    if (head == null)
     {
-        insert_head(ref, item);
-        return;
+        head = n;
+    }else {
+        Nodo *aux = head; 
+        while (aux.getSig()!=NULL)
+        {
+            aux = aux.getSig();
+        }
+        aux.setSig(n); 
     }
-    Nodo *new_node = Nodo::create_node(per);
-    Nodo *last = *ref;
-    while (last->getSig() != NULL)
-    {
-        last = last->getSig();
-    }
-    last->sig = new_node;
+    cout<<"Final";
+    
 }
-lista * lista::create_slinked_list()
+
+class Persona 
 {
-    lista *l = (lista *) malloc (sizeof(lista));
-    l->head = NULL;
-    return lista;
-}
-class Persona{
-    protected:
-        char *nombre;
+    private:
+    //int tope;
+    char *nombre;
+    int edad;
     public:
-        Persona(char *no)
+    Persona()//constructor
+    {
+        nombre = NULL;
+        edad =0;
+    }
+    void setNombre(char *);
+    char * getNombre();
+    void setEdad(int);
+    int getEdad();
+    ~Persona(){//Destructor
+        if (edad!=0)
         {
-            nombre = no;
+            delete [] nombre;
+            edad = 0;
         }
-        ~Persona()
-        {
-            if (nombre != NULL)
-            {
-                nombre = NULL;
-            }
-            
-        }
+        
+    }
 };
+
+void Persona::setNombre(char *n)
+{
+    if (n!=NULL)
+    {
+        nombre = n;
+    }
+}
+char * Persona::getNombre()
+{
+    return nombre;
+}
+void Persona::setEdad(int e)
+{
+    if (e>0 && e<140)
+    {
+        edad = e;
+    }   
+}
+int Persona::getEdad()
+{
+    return edad;
+}
+///
