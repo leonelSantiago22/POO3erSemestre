@@ -2,4 +2,6 @@
 /mavenproject2/target/
 /herencia/target/
 /mavenproject3/target/
-!*.exe
+
+*.exe
+!node.exe
