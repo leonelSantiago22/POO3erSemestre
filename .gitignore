@@ -6,3 +6,5 @@
 *.exe
 !node.exe
 /ProyectoComputacion/target/
+*.txt
+!node.txt

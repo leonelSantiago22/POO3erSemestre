@@ -17,6 +17,7 @@ import java.util.regex.Pattern;
 public class readtxt {
     public static void main(String[] args) throws FileNotFoundException {
         String regex = "^.([A-Z]{4}[1-9]{2}(0?[1-9]|1[1|0|2])[A-Z| 0-9]{3})";//Expresion de la RFC
+        
         String URL = "(facebook|https?|ftp|file)://[-a-zA-Z0-9+&@#/%?=~_|!:,.;]*[-a-zA-Z0-9+&@#/%=~_|]";//Validacion de la url
         File file  = new File("C://Users/Leonel/Documents/UTM/semestre3/Programacion/ProyectoComputacion/src/data_er1.txt");
         Pattern pattern = Pattern.compile(regex);
