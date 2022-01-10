@@ -12,7 +12,8 @@ class Alumno {
     Libro *lPrestado[3];
     public:
     friend ostream& operator<<(ostream& op,  Alumno& os);
-    Alumno(){
+    Alumno()
+    {
         matricula = 0;
         grupo = 0;
         nombre = NULL;

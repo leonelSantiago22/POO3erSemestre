@@ -1,3 +1,6 @@
+
+import java.util.*;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
@@ -43,15 +46,13 @@ class Alumno{
     {
         if(_gr>0 && _gr<100 ){
             grupo = _gr;
-        }else {
-            System.out.println("Grupo no valido");
         }
     }
     public void setLibro(Libro _l)
     {
         if(_l != null){
         int i=0;
-        while(lPrestado[i]!=null)
+        while(this.lPrestado[i]!=null)
         {
             i++;
         }
@@ -75,7 +76,7 @@ class Alumno{
     {
         for(int i=0; i<5; i++)
         {
-            System.out.println("Posision"+(i+1)+" Libro   "+lPrestado[i]);
+            System.out.println("Posision"+(i+1)+" Libro   "+lPrestado[i].toString());
         }
     }
     public void Devolucion(int pos)
@@ -97,7 +98,7 @@ class Alumno{
         {
             if(lPrestado[i]!=null)
             {
-                System.out.println("Libro "+(i+1)+" "+lPrestado[i]);
+                System.out.println("Libro "+(i+1)+" "+lPrestado[i].toString());
             }
         }
     }
@@ -109,7 +110,7 @@ class Libro{
     private String editorial;
     private int edicion; 
     private int anio;
-    private Alumno aLumno;
+    protected Alumno aLumno;
     public Libro()
     {
            aLumno = null;
@@ -176,9 +177,43 @@ public class PersonaAsociacion {
        public static void main(String[] args) {
         Alumno alumno = new Alumno();
         Libro libro = new Libro();
-        alumno.setGrupo(3);
+        Libro libro2 = new Libro();
+        Libro libro3 = new Libro();
+        Libro libro4 = new Libro();
+        Libro libro5 = new Libro();
+        alumno.setGrupo(6);
         alumno.setNombre("Leonel");
         alumno.setMatricula(123);
+        libro.setAlumno(alumno);
+        libro.setAnio(1234);
+        libro.setEdicion(2);
+        libro.setEditorial("Lobesno");
+        libro.setNombreLibro("Hasta que te conoci");
+        libro2.setAlumno(alumno);
+        libro2.setAnio(1234);
+        libro2.setEdicion(2);
+        libro2.setEditorial("Lobesno");
+        libro2.setNombreLibro("Hasta que te conoci");
+        libro3.setAlumno(alumno);
+        libro3.setAnio(1234);
+        libro3.setEdicion(2);
+        libro3.setEditorial("Lobesno");
+        libro3.setNombreLibro("Hasta que te conoci");
+        libro4.setAlumno(alumno);
+        libro4.setAnio(1234);
+        libro4.setEdicion(2);
+        libro4.setEditorial("Lobesno");
+        libro4.setNombreLibro("Hasta que te conoci");
+        libro5.setAlumno(alumno);
+        libro5.setAnio(1234);
+        libro5.setEdicion(2);
+        libro5.setEditorial("Lobesno");
+        libro5.setNombreLibro("Hasta que te conoci");
+        alumno.setLibro(libro);
+        alumno.setLibro(libro2);
+        alumno.setLibro(libro3);
+        alumno.setLibro(libro4);
+        alumno.setLibro(libro5);
         alumno.mostrar();
     }
 }
