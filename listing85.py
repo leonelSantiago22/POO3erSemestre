@@ -12,7 +12,7 @@ class Tercera(base):
     def quien(self):
         print('tercera')
 class tercera (base):
-    def foo(self):#Solo aparecera lo de la clase base
+    def foo(self):#Solo aparecera lo de la clase baseg
         return
 
 #Script de ejecucion
