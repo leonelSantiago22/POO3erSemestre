@@ -229,4 +229,4 @@ int main()
     cout<< " Ganado $ : "<<c.earnings();
     //A un falta pagina 160 del libro
 }
-//finished
+//finishedcd 
